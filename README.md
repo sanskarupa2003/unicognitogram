@@ -27,6 +27,8 @@
   - anonymous
   - duty leaves feature
   - events (upcoming ongoing)
+
+  - POSTMAN DOCUMENTATION : https://documenter.getpostman.com/view/32409802/2s9YsT6UP9
     
 
 ## THIS IS AN INTIAL REPORT (THIS REPORT CAN GET MODIFIED)
