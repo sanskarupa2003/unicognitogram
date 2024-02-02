@@ -1,17 +1,16 @@
-
-
 .logoo {
   position: absolute;
   top: 23vh;
-  right: 5vw;
-  width: 47vh;
+  left: 72vw;
+  width: 25vw;
+  
 }
 
 .text1 {
   position: absolute;
   top: 20vh;
   left: 31vw;
-  font-size:4vh;
+  font-size:2vw;
 }
 
 .text2
@@ -19,7 +18,7 @@
   position: absolute;
   top: 32vh;
   left: 14vw;
-  font-size:16vh;
+  font-size:8vw;
 }
 
 .rec {

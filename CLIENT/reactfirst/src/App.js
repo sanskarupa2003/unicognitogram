@@ -1,4 +1,3 @@
-
 import logo from './logow.png';
 import rect from './Rectangle-5.svg';
 import arro from './Arrow1.svg';
