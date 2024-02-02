@@ -1,11 +1,15 @@
-console.log("Sanskar")
-
+console.log("Sanskar");
 const express = require("express");
-const app= express();
-const port=8000;
-
-// Middleware to parse JSON body in requests
+const mongoose = require("mongoose");
+const app = express();
 app.use(express.json());
+
+// Replace with your MongoDB connection string
+//const uri = "mongodb://127.0.0.1:27017/";
+//mongoose.connect(uri);
+
+//const db = mongoose.connection;
+//db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 
 app.get("/launch", (req,res)=>{
