@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Signin.css';
 
 function Signin() {
@@ -6,11 +7,11 @@ function Signin() {
         <div className='wrapper'>
             <form action="">
                 <h1>Sign in</h1>
-                <div className = 'acc'>
+                <div className = 'accc'>
                     <h4>New User?</h4>
-                    <a href="http://localhost:3000/home/signup" target="_blank" rel="noopener noreferrer">
+                    <NavLink to="http://localhost:3000/home/signup" >
                     <h4 style={{color:'#F53816'}}>Sign Up</h4>
-                    </a>
+                    </NavLink>
                 </div> 
                 {/* <div className="input-box">
                     <input type='text' placeholder='Email address' required></input>
@@ -21,8 +22,9 @@ function Signin() {
                 <div className="input-box">
                     <input type='text' placeholder='Password' required></input>
                 </div>
-                
+                <NavLink to="http://localhost:3000/home/feed" >
                 <button type='submit'>SIGN IN</button>
+                </NavLink>
             </form>
         </div>
         </>

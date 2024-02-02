@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Signup.css';
 
 function Signup() {
@@ -8,9 +9,9 @@ function Signup() {
                 <h1>Sign up</h1>
                 <div className = 'acc'>
                     <h4>Have an account?</h4>
-                    <a href="http://localhost:3000/home/signin" target="_blank" rel="noopener noreferrer">
+                    <NavLink to="http://localhost:3000/home/signin">
                     <h4 style={{color:'#F53816'}}>Sign In</h4>
-                    </a>
+                    </NavLink>
                 </div> 
                 <div className="input-box">
                     <input type='text' placeholder='Email address' required></input>
