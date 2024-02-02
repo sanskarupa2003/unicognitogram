@@ -22,7 +22,7 @@ function Signin() {
                 <div className="input-box">
                     <input type='text' placeholder='Password' required></input>
                 </div>
-                <NavLink to="http://localhost:3000/home/feed" >
+                <NavLink to="/home/feed" >
                 <button type='submit'>SIGN IN</button>
                 </NavLink>
             </form>
