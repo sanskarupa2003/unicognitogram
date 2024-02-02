@@ -21,7 +21,7 @@ root.render(
     <Route path="/home/signup" element={<Signup/>}/>
     <Route path="/home/signin" element={<Signin/>}/>
     <Route path="/home/feed" element={<Feed/>}/>
-    <Route path="/*" element={<h1>page not found go to /home</h1> }/>
+    <Route path="/*" element={<h1 style={{ color: '#FFFFFF'}}>Go to /home</h1> }/>
     
   </Routes>
   </BrowserRouter>
