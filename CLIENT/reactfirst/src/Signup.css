@@ -46,11 +46,11 @@ body {
     color: black;
 }
 
-.wrapper .acc{
+/* .wrapper .acc{
     display: flex;
     flex-direction: column;
     align-items: end;
-}
+} */
 
 .wrapper button
 {
