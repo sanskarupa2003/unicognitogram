@@ -1,7 +1,9 @@
+
 import logo from './logow.png';
 import rect from './Rectangle-5.svg';
 import arro from './Arrow1.svg';
 import './App.css';
+import { NavLink } from 'react-router-dom';
 
 
 function App() {
@@ -18,13 +20,13 @@ function App() {
       <img src={logo} className="logoo" alt="logo" />
     </div>
     
-    <a href="http://localhost:3000/home/signup" target="_blank" rel="noopener noreferrer">
-        <button className='btn' >
+    <NavLink to="http://localhost:3000/home/signup">   
         <img className='rec' alt="" src={rect}/>
         <div className='laun' style={{ color: '#FFFFFF', fontFamily: 'Hammersmith One' }}>LAUNCH</div>
         <img className='arrow' alt="" src={arro} />
-        </button>
-    </a>  
+        
+    </NavLink>  
+
     </div>
     </>
   );

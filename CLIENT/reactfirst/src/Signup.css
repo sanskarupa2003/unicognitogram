@@ -6,6 +6,7 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
+    
 }
 
 .wrapper {
@@ -48,8 +49,7 @@ body {
 
 .wrapper .acc{
     display: flex;
-    flex-direction: column;
-    align-items: end;
+    justify-content:right;
 }
 
 .wrapper button
