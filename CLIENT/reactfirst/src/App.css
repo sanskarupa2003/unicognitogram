@@ -1,3 +1,7 @@
+body{
+  background: black;
+}
+
 .logoo {
   position: absolute;
   top: 23vh;

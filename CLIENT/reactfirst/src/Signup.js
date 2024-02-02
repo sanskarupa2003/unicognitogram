@@ -4,6 +4,7 @@ import './Signup.css';
 function Signup() {
     return(
         <>
+        <div className='cont'>
         <div className='wrapper'>
             <form action="">
                 <h1>Sign up</h1>
@@ -25,6 +26,7 @@ function Signup() {
                 
                 <button type='submit'>SIGN UP</button>
             </form>
+        </div>
         </div>
         </>
     );

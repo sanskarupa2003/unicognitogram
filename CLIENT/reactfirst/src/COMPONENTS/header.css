@@ -1,0 +1,38 @@
+.wrap {
+    height: 11vh;
+    background: black;
+    padding: 20px;
+    border-bottom: 2px solid white;
+  }
+  
+  .wrap .element {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+  }
+
+  .wrap .element2
+  {
+    display: flex;
+    justify-content:flex-end;
+    
+}
+
+.wrap button{
+    height: 5vh;
+    width: 6vw;
+    background: #F53816;
+    color: white;
+    border:1px solid white;
+    border-radius: 40px;
+    padding: 5px 5px 5px 5px;
+}
+
+
+  
+  .l{
+    width: 50px;
+    height: auto;
+    margin-right: 10px; 
+  }
+  
