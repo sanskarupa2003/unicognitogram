@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './index.css';
 import App from './App';
+import Signup from './Signup';
+import Signin from './Signin';
 import reportWebVitals from './reportWebVitals';
-import Feed from './Feed';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
@@ -14,8 +15,9 @@ root.render(
   <BrowserRouter>
   <Routes>
     <Route path="/home" element={<App />}/>
-    <Route path="/home/feed" element={<Feed/>}/>
-    <Route path="/*" element={<h1>page not found</h1> }/>
+    <Route path="/home/signup" element={<Signup/>}/>
+    <Route path="/home/signin" element={<Signin/>}/>
+    <Route path="/*" element={<h1>page not found go to /home</h1> }/>
     
   </Routes>
   </BrowserRouter>
