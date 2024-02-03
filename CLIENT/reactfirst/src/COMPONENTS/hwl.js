@@ -1,8 +1,8 @@
 import React from 'react'
 import l from '../logow.png'
-import './header.css'
+import './hwl.css'
 import { NavLink } from 'react-router-dom';
-function Header() {
+function hwl() {
     return (
       <>
         <div className='containerr'>
@@ -17,11 +17,7 @@ function Header() {
               </div>
               </NavLink>
             </div>
-            <div className='elemetn2'>
-            <NavLink to="/home">
-            <button type='submit'>LOG OUT</button>
-            </NavLink>
-            </div>
+            
           </div>
 
         </div>
@@ -29,4 +25,4 @@ function Header() {
     );
   }
   
-  export default Header;
+  export default hwl;

@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import './Signup.css';
+import Hwl from './COMPONENTS/hwl';
 
 function Signup() {
     return(
         <>
+        <Hwl/>
         <div className='cont'>
         <div className='wrapper'>
             <form action="">
