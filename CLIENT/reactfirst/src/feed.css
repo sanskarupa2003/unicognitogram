@@ -1,0 +1,28 @@
+.group
+{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.pro
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    min-height:30vh;
+}
+
+.mainfeed
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border:1px solid grey;
+    width: 700px;
+    height: 100%;
+    margin-left: 20px;
+}

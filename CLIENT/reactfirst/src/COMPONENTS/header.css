@@ -1,9 +1,10 @@
 .wrap {
     display: flex;
     height: 11vh;
-    background: black;
+    
     padding: 20px;
-    border-bottom: 2px solid white;
+    background:#080808;
+    border-bottom: 1px solid grey;
     justify-content: space-between;
   }
   
@@ -31,7 +32,7 @@
     width: 6vw;
     background: #F53816;
     color: white;
-    border:2px solid white;
+    border:2px solid grey;
     border-radius: 40px;
     padding: 8px 5px 5px 5px;
     min-width: 6vw;
