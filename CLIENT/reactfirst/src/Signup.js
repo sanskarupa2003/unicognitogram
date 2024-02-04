@@ -1,15 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import './Signup.css';
+import Hwl from './COMPONENTS/hwl';
 
 function Signup() {
     return(
         <>
+        <Hwl/>
+        <div className='cont'>
         <div className='wrapper'>
             <form action="">
                 <h1>Sign up</h1>
                 <div className = 'acc'>
                     <h4>Have an account?</h4>
-                    <NavLink to="http://localhost:3000/home/signin">
+                    <NavLink to="/home/signin">
                     <h4 style={{color:'#F53816'}}>Sign In</h4>
                     </NavLink>
                 </div> 
@@ -25,6 +28,7 @@ function Signup() {
                 
                 <button type='submit'>SIGN UP</button>
             </form>
+        </div>
         </div>
         </>
     );

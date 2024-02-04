@@ -20,7 +20,7 @@ function App() {
       <img src={logo} className="logoo" alt="logo" />
     </div>
     
-    <NavLink to="http://localhost:3000/home/signup">   
+    <NavLink to="/home/signup">   
         <img className='rec' alt="" src={rect}/>
         <div className='laun' style={{ color: '#FFFFFF', fontFamily: 'Hammersmith One' }}>LAUNCH</div>
         <img className='arrow' alt="" src={arro} />
