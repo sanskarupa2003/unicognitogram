@@ -7,16 +7,21 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 
 }
 
-body {
+* {
+  box-sizing: border-box;
+}
+
+
+body{
+  
   
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, 'Praise','Hammersmith One';
+    sans-serif, 'Praise','Hammersmith One',Roboto, Helvetica, Arial, sans-serif;;
   
-  background: radial-gradient(circle at 24.1% 68.8%, rgb(23, 23, 23) 0%, rgb(0, 0, 0) 99.9%);  
+  background-color: #101010;
 }
 

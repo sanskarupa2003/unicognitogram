@@ -6,10 +6,11 @@ import './App.css';
 import { NavLink } from 'react-router-dom';
 
 
+
 function App() {
   return (
     <>
-    <div className='bod'>
+    
     <div className="text1">
     <p style={{ color: '#F53816', fontFamily: 'Praise' }}>You have gone Unicognito</p>
     </div>
@@ -26,8 +27,7 @@ function App() {
         <img className='arrow' alt="" src={arro} />
         
     </NavLink>  
-
-    </div>
+    
     </>
   );
 }

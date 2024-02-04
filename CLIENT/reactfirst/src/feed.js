@@ -1,14 +1,23 @@
 import React from 'react';
 import Header from './COMPONENTS/header';
-import Footer from  './COMPONENTS/footer';
-import './feed.css' ;
-
+import './feed.css' 
+import OutlinedCard from './COMPONENTS/OutlinedCard';
+import Mfeed from './COMPONENTS/mfeed';
 function feed() {
   return (
     <>
     <Header/>
-    <h1>feed</h1>
-    <Footer/>
+    <div className='coll'>
+    
+    <div className='group'>
+      <div className='pro'>
+      <OutlinedCard/>
+      </div>
+      <div className='mainfeed'>
+      <Mfeed/>
+      </div>
+    </div>
+    </div>
     </>
   )
 }
