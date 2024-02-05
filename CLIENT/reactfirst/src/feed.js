@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './COMPONENTS/header';
 import './feed.css' 
-import OutlinedCard from './COMPONENTS/OutlinedCard';
+
 import Mfeed from './COMPONENTS/mfeed';
+import KeepMountedModal from './COMPONENTS/KeepMountedModal';
 function feed() {
   return (
     <>
@@ -11,7 +12,7 @@ function feed() {
     
     <div className='group'>
       <div className='pro'>
-      <OutlinedCard/>
+      <KeepMountedModal/>
       </div>
       <div className='mainfeed'>
       <Mfeed/>
