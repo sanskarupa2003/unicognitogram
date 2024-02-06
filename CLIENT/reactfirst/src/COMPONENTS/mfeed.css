@@ -1,0 +1,50 @@
+.grouppp
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.postbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    align-items: center;
+    width: 700px;
+    height: 70px;
+    gap: 5px;
+}
+.postbox input {
+    border:2px solid black;
+    color:white;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 80%;
+    height: 41px;
+    background-color: transparent;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+.postbutton
+{
+    background: #f53816c6;
+    color: white;
+    border:2px solid white;
+    border-radius: 40px;
+    padding: 8px 5px 5px 5px;
+    height: 40px;
+    width: 45px;
+    font-family: "Hammersmith One", sans-serif;
+    text-align: center;
+}
+
+.posts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    align-items: center;
+    width: 700px;
+    height: 70px;
+}

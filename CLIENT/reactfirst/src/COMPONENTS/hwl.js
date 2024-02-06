@@ -6,7 +6,7 @@ function hwl() {
     return (
       <>
         <div className='containerr'>
-        <div className='wrap'>
+        <div className='wraps'>
             <div className='element'>
               <div>
                 <img src={l} className="l" alt="" />

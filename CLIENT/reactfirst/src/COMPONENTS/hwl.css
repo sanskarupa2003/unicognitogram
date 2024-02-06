@@ -1,4 +1,4 @@
-.wrap {
+.wraps {
     display: flex;
     height: 11vh;
     background: black;
@@ -7,26 +7,26 @@
     justify-content: space-between;
   }
   
-  .wrap .element {
+  .wraps .element {
     display: flex;
     flex-direction: row;
     align-items: center; 
   }
 
-  .wrap .element2
+  .wraps .element2
   {
       display: flex;
       justify-content: right;
   }
   
-  .wrap button {
+  .wraps button {
     font-family: "Hammersmith One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2vh;
   }
   
-.wrap button{
+.wraps button{
     height: 5vh;
     width: 6vw;
     background: #F53816;
