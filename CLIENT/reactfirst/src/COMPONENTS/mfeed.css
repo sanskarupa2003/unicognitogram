@@ -38,3 +38,13 @@
     font-family: "Hammersmith One", sans-serif;
     text-align: center;
 }
+
+.posts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    align-items: center;
+    width: 700px;
+    height: 70px;
+}

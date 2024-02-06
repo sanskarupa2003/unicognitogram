@@ -2,6 +2,7 @@ import React from 'react'
 import l from '../logow.png'
 import './header.css'
 import { NavLink } from 'react-router-dom';
+import AccountMenu from './AccountMenu';
 function Header() {
     return (
       <>
@@ -18,9 +19,10 @@ function Header() {
               </NavLink>
             </div>
             <div className='elemetn2'>
-            <NavLink to="/home">
+            {/* <NavLink to="/home">
             <button type='submit'>LOG OUT</button>
-            </NavLink>
+            </NavLink> */}
+            <AccountMenu/>
             </div>
           </div>
 

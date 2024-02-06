@@ -2,6 +2,8 @@ import React from 'react'
 import './mfeed.css' 
 import Avatar from '@mui/material/Avatar';
 import avt from '../avt.jpg';
+
+
 function mfeed() {
   return (
     <div>
@@ -11,7 +13,9 @@ function mfeed() {
     <input type='text' placeholder='Write Something'></input>
     <button className='postbutton'>Post</button>
     </div>
-    
+    <div className='posts'>
+    {/* <Posts/> */}
+    </div>
     </div>
   )
 }
