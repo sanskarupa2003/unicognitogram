@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState} from 'react';
 import './mfeed.css';
 import Avatar from '@mui/material/Avatar';
 import avt from '../avt.png';
