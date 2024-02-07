@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './COMPONENTS/header';
 import './feed.css' 
-
 import Mfeed from './COMPONENTS/mfeed';
-import KeepMountedModal from './COMPONENTS/KeepMountedModal';
+
+// import KeepMountedModal from './COMPONENTS/KeepMountedModal';
 function feed() {
   return (
     <>
@@ -11,9 +11,6 @@ function feed() {
     <div className='coll'>
     
     <div className='group'>
-      <div className='pro'>
-      <KeepMountedModal/>
-      </div>
       <div className='mainfeed'>
       <Mfeed/>
       </div>

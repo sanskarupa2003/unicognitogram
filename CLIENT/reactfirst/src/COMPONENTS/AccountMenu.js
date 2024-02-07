@@ -61,10 +61,13 @@ export default function AccountMenu() {
         id="account-menu"
         open={open}
         onClose={handleClose}
+        
       >
         <MenuItem onClick={handlleClick} >
-        <Typography sx={{ fontFamily: 'Poppins' }}> 
-          <Avatar /> Profile
+         
+        <Avatar fontSize="small" /> 
+        <Typography sx={{ p:1,fontSize:14,fontFamily: 'Poppins'}}>
+           Profile
         </Typography>
         </MenuItem>
 
@@ -74,7 +77,7 @@ export default function AccountMenu() {
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          <Typography sx={{ fontFamily: 'Poppins'}}>
+          <Typography sx={{ fontSize:14,fontFamily: 'Poppins'}}>
             Logout
           </Typography>
         </MenuItem>

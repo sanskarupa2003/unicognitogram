@@ -1,0 +1,29 @@
+.post1
+{
+    display: flex;
+    flex-direction: row;
+}
+.coll1
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    
+    width: 700px;
+}
+
+.content
+{
+    padding-left: 55px;
+    padding-right: 55px;
+    max-width: 700px; /* Adjust this value as needed */
+    overflow-wrap: break-word; /* Wrap long words */
+}
+
+.like
+{
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 10px;
+}
