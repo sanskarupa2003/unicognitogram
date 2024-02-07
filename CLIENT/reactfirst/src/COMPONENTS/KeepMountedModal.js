@@ -18,11 +18,11 @@ const card = (
       <Typography variant="h5" component="div" gutterBottom sx={{ fontFamily: 'Poppins' }}>
         Anonymous 1
       </Typography>
-      <Typography sx={{ mb: 1.5, fontFamily: 'Poppins' }}>
+      <Typography sx={{ fontSize:12,mb: 1.5, fontFamily: 'Poppins' }}>
         3rd year
       </Typography>
-      <Typography variant="p1" sx={{ fontFamily: 'Poppins' }}>
-        My BIO
+      <Typography sx={{ fontSize:12,fontFamily: 'Poppins' }}>
+        BIO
       </Typography>
     </CardContent>
     <CardActions sx={{ color: 'white', background: '#080808', padding: 5, paddingRight: 5, display: 'flex', alignItems: 'right', justifyContent: 'right' }}>
@@ -30,8 +30,9 @@ const card = (
         size="small"
         sx={{
           background: '#F53816',
+          fontFamily: 'Poppins',
           color: 'white',
-          border: '2px solid grey',
+          border: '2px solid white',
           borderRadius: 40,
           '&:hover': {
             background: '#FF6347', // Change the hover color as desired

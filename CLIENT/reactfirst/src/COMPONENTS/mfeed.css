@@ -1,7 +1,8 @@
-.grouppp
+.groupsss
 {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 .postbox{
@@ -13,6 +14,7 @@
     width: 700px;
     height: 70px;
     gap: 5px;
+    border-bottom: 1px solid grey;
 }
 .postbox input {
     border:2px solid black;
@@ -41,10 +43,13 @@
 
 .posts{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    padding: 8px 6px 10px 24px;
+    justify-content: flex-start;
     background-color: transparent;
     align-items: center;
     width: 700px;
-    height: 70px;
+    height: fit-content;
+    font-family: "Hammersmith One", sans-serif;
+    color: white;
+    border-bottom: 1px solid grey;
 }

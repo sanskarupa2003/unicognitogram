@@ -12,23 +12,24 @@ const card = (
     <CardContent sx={{ color: 'white', background: '#080808', padding: 5, paddingRight: 10, display: 'flex', flexDirection: 'column', alignItems: 'left', justifyContent: 'left', textAlign: 'left' }}>
       <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 70, height: 70, mb: 1.5 }} />
 
-      <Typography variant="h5" component="div" gutterBottom sx={{ fontFamily: 'Poppins'}}>
+      <Typography variant="h2" component="div" gutterBottom sx={{ fontFamily: 'Poppins'}}>
         Annonymous 1
       </Typography>
-      <Typography sx={{ mb: 1.5, fontFamily: 'Poppins' }}>
+      <Typography sx={{ mb: 1.5 ,fontFamily: 'Poppins' }}>
         3rd year
       </Typography>
-      <Typography sx={{ fontFamily: 'Poppins'}}>
-        My BIO
+      <Typography sx={{ fontSize: 84, fontFamily: 'Poppins'}}>
+        Bio
       </Typography>
     </CardContent>
     <CardActions sx={{ color: 'white', background: '#080808', padding: 5, paddingRight: 5, display: 'flex', alignItems: 'right', justifyContent: 'right' }}>
       <Button
         size="small"
         sx={{
+          
           background: '#F53816',
           color: 'white',
-          border: '2px solid grey',
+          border: '2px solid white',
           borderRadius: 40,
           '&:hover': {
             background: '#FF6347', // Change the hover color as desired

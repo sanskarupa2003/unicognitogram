@@ -2,25 +2,13 @@
 {
     display: flex;
     flex-direction: row;
-
+    
 }
-
-
-.pro
-{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-left: 5vw;
-    margin-top: 10vh;
-    min-height:30vh;
-}
-
 .mainfeed {
     display: flex;
     align-items: top;
     justify-content: center;
-    border-bottom: 1px solid grey;
+     
     width: 700px;
     height: fit-content;
     margin: 0 auto; /* Center horizontally using margin auto */
