@@ -4,11 +4,12 @@ import avt from '../avt.png';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import axios from 'axios';
-import './post.css'
+import './post.css';
 
 function Post() {
   const [liked, setLiked] = useState(false);
   const [responseData, setResponseData] = useState('');
+  const [likes, setLikes] = useState(0);
 
   const fetchData = async () => {
     try {
@@ -26,8 +27,26 @@ function Post() {
     fetchData();
   }, []);
 
+  const fetchLikes = () => {
+    // Simulating fetching likes from an API
+    // In a real application, you'd replace this with an actual API call
+    // Here we just simulate an increment for demonstration purposes
+    setTimeout(() => {
+      setLikes(1); // Simulated likes count
+    }, 1000); // Simulating a delay for fetching data
+  };
+
+  useEffect(() => {
+    fetchLikes();
+  }, []);
+
   const handleLikeClick = () => {
-    setLiked(!liked);
+    if (liked) {
+      setLikes(likes - 1); // Decrease like count if unliked
+    } else {
+      setLikes(likes + 1); // Increase like count if liked
+    }
+    setLiked(!liked); // Toggle liked state
   };
 
   return (
@@ -46,6 +65,7 @@ function Post() {
         </div>
         <div className='like' onClick={handleLikeClick}>
           {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
+          <p>{likes} {likes === 1 ? 'like' : 'likes'}</p>
         </div>
       </div>
     </>
