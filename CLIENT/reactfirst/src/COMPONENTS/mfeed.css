@@ -43,7 +43,8 @@
 
 .posts{
     display: flex;
-    padding: 8px 6px 10px 24px;
+    
+    
     justify-content: flex-start;
     background-color: transparent;
     align-items: center;
@@ -51,5 +52,7 @@
     height: fit-content;
     font-family: "Hammersmith One", sans-serif;
     color: white;
-    border-bottom: 1px solid grey;
+    /* border-top: 1px solid grey ;
+    border-bottom: 1px solid grey; */
+    flex-direction: column;
 }

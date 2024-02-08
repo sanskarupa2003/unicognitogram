@@ -2,6 +2,11 @@
 {
     display: flex;
     flex-direction: row;
+    padding-top: 10px;
+    
+}
+.post1 p{
+    padding-top: 10px;
 }
 .coll1
 {
@@ -9,8 +14,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;
-    
+    border-top: 1px solid grey ;
+    border-bottom: 1px solid grey;
     width: 700px;
+    padding-left: 21px;
 }
 
 .content
@@ -26,4 +33,10 @@
     padding-left: 55px;
     padding-right: 55px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+.like p {
+    padding-left: 6px;
+}
+
