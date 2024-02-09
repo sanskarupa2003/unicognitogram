@@ -32,7 +32,7 @@ function Post() {
     // In a real application, you'd replace this with an actual API call
     // Here we just simulate an increment for demonstration purposes
     setTimeout(() => {
-      setLikes(1); // Simulated likes count
+      setLikes(0); // Simulated likes count
     }, 1000); // Simulating a delay for fetching data
   };
 
