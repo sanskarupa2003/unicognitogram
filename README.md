@@ -5,6 +5,12 @@
 ### Project Name: UNICOGNITOGRAM
 <img src="https://github.com/sanskarupa2003/unicognitogram/assets/92289612/de849ab6-2f56-4379-9d4e-df552744f52d" alt="logo" width="370"/>
 
+
+
+https://github.com/codinggita/unicognitogram/assets/92289612/7a551428-21c6-4c55-9836-50d905f30a48
+
+
+
 - Which problem Project is Solving?
   - There are many students which send PGs and rooms requests few confess about multiple things in mutiple instagram pages but there is no single platform for all of these issues.
   - this website will provide an anonymous platform to talk and share your thoughts
@@ -29,6 +35,7 @@
   - events (upcoming ongoing)
 
   - POSTMAN DOCUMENTATION : https://documenter.getpostman.com/view/32409802/2s9YsT6UP9
+    
     
 
 ## THIS IS AN INTIAL REPORT (THIS REPORT CAN GET MODIFIED)
