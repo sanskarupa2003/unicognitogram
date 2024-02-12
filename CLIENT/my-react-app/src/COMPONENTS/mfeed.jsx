@@ -6,7 +6,7 @@ import Post from './post';
 import axios from 'axios';
 
 function Mfeed({ onResponseReceived = () => {} }) {
-  const [inputData, setInputData] = useState('');
+  let [inputData, setInputData] = useState('');
   const [posts, setPosts] = useState([]);
 
   const handlePost = async () => {
@@ -19,7 +19,6 @@ function Mfeed({ onResponseReceived = () => {} }) {
           data: inputData
         };
         setPosts([...posts, newPost]); // Add the new post to the posts array
-        setInputData(''); // Clear input after successful post
       } else {
         throw new Error('Network response was not ok');
       }

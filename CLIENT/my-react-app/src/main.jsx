@@ -22,7 +22,7 @@ root.render(
     <Route path="/home/signup" element={<Signup/>}/>
     <Route path="/home/signin" element={<Signin/>}/>
     <Route path="/home/feed" element={<Feed/>}/>
-    <Route path="/*" element={<h1 style={{ color: '#FFFFFF'}}>Go to /home</h1> }/>
+    <Route path="/*" element={<App />}/>
     
   </Routes>
   </BrowserRouter>
@@ -32,4 +32,3 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
