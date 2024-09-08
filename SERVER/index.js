@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/unicog", {
+mongoose.connect("mongodb+srv://sanskarupadhyay:hello123@cluster1.uxo0u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
