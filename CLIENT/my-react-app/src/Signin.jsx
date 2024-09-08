@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Signin.css';
 import Hwl from './COMPONENTS/hwl';
+import axios from 'axios';
 
 function Signin() {
     const [formData, setFormData] = useState({
-        username: '',
+        email: '',
         password: ''
     });
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,11 +20,23 @@ function Signin() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // You can handle form submission here, for example, by sending the data to your backend
-        console.log(formData);
-        // Make sure to handle form submission logic here, e.g., sending a request to your backend
+        setError('');
+
+        try {
+            const response = await axios.post('http://localhost:8000/home/signin', formData);
+            console.log(response.data);
+            
+            // Store the token in localStorage
+            localStorage.setItem('token', response.data.token);
+            
+            // Redirect to the feed page
+            navigate('/home/feed');
+        } catch (error) {
+            console.error('Error signing in:', error);
+            setError(error.response?.data?.message || 'An error occurred during sign in');
+        }
     };
 
     return(
@@ -37,14 +52,15 @@ function Signin() {
                                 <h4 style={{color:'#F53816'}}>Sign Up</h4>
                             </NavLink>
                         </div> 
+                        {error && <p style={{color: 'red'}}>{error}</p>}
                         <div className="input-box">
-                            <h5>Enter Your Username</h5>
+                            <h5>Enter Your Email</h5>
                             <input 
-                                type='text' 
-                                name="username" 
-                                value={formData.username} 
+                                type='email' 
+                                name="email" 
+                                value={formData.email} 
                                 onChange={handleChange} 
-                                placeholder='Username' 
+                                placeholder='Email' 
                                 required 
                             />
                         </div>
@@ -59,9 +75,7 @@ function Signin() {
                                 required 
                             />
                         </div>
-                        <NavLink to="/home/feed">
-                            <button className='button0' type='submit'>SIGN IN</button>
-                        </NavLink>
+                        <button type='submit'>SIGN IN</button>
                     </form>
                 </div>
             </div>

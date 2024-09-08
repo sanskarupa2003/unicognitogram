@@ -1,23 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import Header from './COMPONENTS/header';
-import './feed.css' 
 import Mfeed from './COMPONENTS/mfeed';
+import './feed.css';
 
-// import KeepMountedModal from './COMPONENTS/KeepMountedModal';
-function feed() {
-  return (
-    <>
-    <Header/>
-    <div className='coll'>
-    
-    <div className='group'>
-      <div className='mainfeed'>
-      <Mfeed/>
-      </div>
-    </div>
-    </div>
-    </>
-  )
+function Feed() {
+    const [feedData, setFeedData] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchFeedData = async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                navigate('/home/signin');
+                return;
+            }
+
+            try {
+                const response = await axios.get('http://localhost:8000/home/feed', {
+                    headers: {
+                        'Authorization': token
+                    }
+                });
+                setFeedData(response.data.data);
+            } catch (error) {
+                console.error('Error fetching feed:', error);
+                if (error.response && error.response.status === 401) {
+                    // Token is invalid or expired
+                    localStorage.removeItem('token');
+                    navigate('/home/signin');
+                }
+            }
+        };
+
+        fetchFeedData();
+    }, [navigate]);
+
+    return (
+        <>
+            <Header />
+            <div className='coll'>
+                <div className='group'>
+                    <div className='mainfeed'>
+                        <Mfeed data={feedData} />
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }
 
-export default feed
+export default Feed;
+
