@@ -1,4 +1,14 @@
 {
+  "name": "unicognitogram",
+  "version": "1.0.0",
+  "description": "A social media application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
@@ -8,5 +18,19 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.1.1",
     "nodemon": "^3.0.3"
-  }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanskarupa2003/unicognitogram"
+  },
+  "keywords": [
+    "social media",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Sanskar"
 }

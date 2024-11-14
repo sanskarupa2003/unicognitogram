@@ -23,7 +23,7 @@ function Signup() {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:8000/home/signup', formData);
+            const response = await axios.post('https://unicognitogram.onrender.com/home/signup', formData);
             console.log(response.data); // Log the response from the backend
             setFormData('');
             

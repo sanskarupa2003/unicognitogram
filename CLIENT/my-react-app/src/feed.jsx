@@ -18,7 +18,7 @@ function Feed() {
             }
 
             try {
-                const response = await axios.get('http://localhost:8000/home/feed', {
+                const response = await axios.get('https://unicognitogram.onrender.com/home/feed', {
                     headers: {
                         'Authorization': token
                     }
