@@ -3,25 +3,35 @@ const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 const port = 8000;
+
+// MongoDB connection string
+const dbUri = "mongodb+srv://sanskarupadhyay:hello123@cluster1.uxo0u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1";
 
 // CORS configuration
 const corsOptions = {
     origin: ['https://unicognito.netlify.app', 'http://localhost:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 204, // For successful OPTIONS preflight requests
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(helmet()); // Security headers
+app.use(rateLimit({ // Rate limiter
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per window
+}));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://sanskarupadhyay:hello123@cluster1.uxo0u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1", {
+mongoose.connect(dbUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -34,9 +44,9 @@ db.once('open', () => {
 
 // Define user schema and model
 const userSchema = new mongoose.Schema({
-    username: String,
-    email: String,
-    password: String,
+    username: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
 });
 
 const User = mongoose.model("User", userSchema);
@@ -50,10 +60,14 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model("Post", postSchema);
 
+// Routes
+
 // Get all posts
 app.get('/home/feed', async (req, res) => {
     try {
-        const posts = await Post.find().populate('userId', 'username');
+        const posts = await Post.find()
+            .populate('userId', 'username')
+            .lean();
         res.json({ data: posts });
     } catch (error) {
         console.error("Error fetching posts:", error);
@@ -64,7 +78,7 @@ app.get('/home/feed', async (req, res) => {
 // Post a new feed
 app.post('/home/feed', async (req, res) => {
     const { userId, content } = req.body;
-    
+
     if (!content) {
         return res.status(400).json({ message: "Content is required" });
     }
@@ -86,6 +100,10 @@ app.post('/home/feed', async (req, res) => {
 // Signup route
 app.post("/home/signup", async (req, res) => {
     const { username, email, password } = req.body;
+
+    if (!username || !email || !password) {
+        return res.status(400).json({ message: "All fields are required" });
+    }
 
     try {
         const existingUser = await User.findOne({ email: email });
@@ -112,6 +130,10 @@ app.post("/home/signup", async (req, res) => {
 // Signin route
 app.post("/home/signin", async (req, res) => {
     const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ message: "Email and password are required" });
+    }
 
     try {
         const user = await User.findOne({ email: email });
