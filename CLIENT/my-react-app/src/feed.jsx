@@ -7,6 +7,8 @@ import './feed.css';
 
 function Feed() {
     const [feedData, setFeedData] = useState([]);
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,19 +20,38 @@ function Feed() {
             }
 
             try {
-                const response = await axios.get('https://unicognitogram.onrender.com/home/feed', {
+                setIsLoading(true);
+                setError('');
+
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/home/feed`, {
                     headers: {
                         'Authorization': token
                     }
                 });
-                setFeedData(response.data.data);
+
+                // Check for success flag in response
+                if (response.data.success) {
+                    setFeedData(response.data.data || []);
+                } else {
+                    // Handle unsuccessful response
+                    setError(response.data.message || 'Failed to fetch feed');
+                }
             } catch (error) {
                 console.error('Error fetching feed:', error);
+                
+                // Handle network or authentication errors
                 if (error.response && error.response.status === 401) {
                     // Token is invalid or expired
                     localStorage.removeItem('token');
                     navigate('/home/signin');
+                } else {
+                    setError(
+                        error.response?.data?.message || 
+                        'An error occurred while fetching the feed. Please try again.'
+                    );
                 }
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -43,7 +64,23 @@ function Feed() {
             <div className='coll'>
                 <div className='group'>
                     <div className='mainfeed'>
-                        <Mfeed data={feedData} />
+                        {error && (
+                            <div 
+                                style={{
+                                    color: 'red', 
+                                    marginBottom: '15px', 
+                                    textAlign: 'center'
+                                }}
+                            >
+                                {error}
+                            </div>
+                        )}
+
+                        {isLoading ? (
+                            <div style={{ textAlign: 'center' }}>Loading...</div>
+                        ) : error ? null : (
+                            <Mfeed data={feedData} />
+                        )}
                     </div>
                 </div>
             </div>
@@ -52,4 +89,3 @@ function Feed() {
 }
 
 export default Feed;
-
