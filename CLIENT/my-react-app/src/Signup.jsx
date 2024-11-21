@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Signup.css';
 import Hwl from './COMPONENTS/hwl';
 import axios from 'axios';
@@ -10,6 +10,9 @@ function Signup() {
         username: '',
         password: ''
     });
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,20 +20,39 @@ function Signup() {
             ...prevState,
             [name]: value
         }));
+        // Clear error when user starts typing
+        setError('');
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError('');
+        setIsLoading(true);
         
         try {
-            const response = await axios.post('https://unicognitogram.onrender.com/home/signup', formData);
-            console.log(response.data); // Log the response from the backend
-            setFormData('');
-            
-            // Optionally, you can navigate to another page or show a success message here
+            const response = await axios.post(
+                `${process.env.REACT_APP_API_URL}/home/signup`, 
+                formData
+            );
+
+            // Check for success flag in response
+            if (response.data.success) {
+                // Show success message or redirect to signin
+                alert('Account created successfully! Please sign in.');
+                navigate('/home/signin');
+            } else {
+                // Handle unsuccessful response
+                setError(response.data.message || 'Signup failed');
+            }
         } catch (error) {
+            // Handle network or server errors
             console.error('Error signing up:', error);
-            // Optionally, you can show an error message to the user
+            setError(
+                error.response?.data?.message || 
+                'An error occurred during signup. Please try again.'
+            );
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -47,10 +69,23 @@ function Signup() {
                                 <h4 style={{color:'#F53816'}}>Sign In</h4>
                             </NavLink>
                         </div> 
+                        
+                        {error && (
+                            <div 
+                                style={{
+                                    color: 'red', 
+                                    marginBottom: '15px', 
+                                    textAlign: 'center'
+                                }}
+                            >
+                                {error}
+                            </div>
+                        )}
+
                         <div className="input-box">
                             <h5>Enter Your Email Address</h5>
                             <input 
-                                type='text' 
+                                type='email' 
                                 name="email" 
                                 value={formData.email} 
                                 onChange={handleChange} 
@@ -80,7 +115,12 @@ function Signup() {
                                 required 
                             />
                         </div>
-                        <button type='submit'>SIGN UP</button>
+                        <button 
+                            type='submit' 
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'SIGNING UP...' : 'SIGN UP'}
+                        </button>
                     </form>
                 </div>
             </div>
@@ -89,4 +129,3 @@ function Signup() {
 }
 
 export default Signup;
-
